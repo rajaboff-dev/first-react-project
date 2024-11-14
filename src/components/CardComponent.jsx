@@ -41,7 +41,7 @@ function CardComponent(props) {
             </CardHeader>
             <CardContent className="flex flex-col gap-3">
               <CardTitle className="line-clamp-1">{recipe.name}</CardTitle>
-              <p className="text-sm font-semibold line-clamp-3">
+              <p className="text-sm font-semibold line-clamp-3 lg:line-clamp-2">
                 <span className="font-medium">Ingredients:</span>{" "}
                 {recipe.ingredients.join(", ")}
               </p>
