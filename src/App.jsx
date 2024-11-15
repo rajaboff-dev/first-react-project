@@ -1,22 +1,25 @@
-import { QueryClient, QueryClientProvider } from "react-query";
-import CardComponent from "./components/CardComponent";
-import { Input } from "./components/ui/input";
-import { useState } from "react";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Layout from "./components/Layout";
 
 function App() {
-  const [searchInputValue, setSearchInputValue] = useState('')
-
-  const handleSearchInputValue = (e) => {
-    setSearchInputValue(e.target.value)
-  }
   return (
-    <div className="flex flex-col items-center justify-center w-full px-10">
-      <h1 className="text-2xl font-bold">Recipes</h1>
-      <Input placeholder='Search foods here' onInput={handleSearchInputValue} />
-      <QueryClientProvider client={new QueryClient()}>
-        <CardComponent searchInputValue={searchInputValue} />
-      </QueryClientProvider>
-    </div>
+      <div className="flex flex-col items-center justify-center w-full px-10">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+            </Route>
+            <Route path="*" element={<p>404</p>} />
+          </Routes>
+        </BrowserRouter>
+      </div>
   );
 }
 
