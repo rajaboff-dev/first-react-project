@@ -41,7 +41,6 @@ export default function AddProductModal({ handleAddProduct }) {
           <DialogHeader>
             <DialogTitle>Add Product</DialogTitle>
           </DialogHeader>
-          <form className="flex flex-col items-center">
             <div className="flex flex-col items-start gap-2">
               <Label htmlFor="product-img">Product Image Link</Label>
               <Input
@@ -83,7 +82,6 @@ export default function AddProductModal({ handleAddProduct }) {
                 Add Product
               </Button>
             </DialogClose>
-          </form>
         </DialogContent>
       </Dialog>
     </div>
