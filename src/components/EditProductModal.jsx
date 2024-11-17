@@ -17,11 +17,6 @@ export default function EditProductModal({ product, handleEditProduct }) {
   const handleEdit = (e) => {
     e.preventDefault();
     handleEditProduct(editedProduct);
-    setEditedProduct({
-      image: "",
-      title: "",
-      description: "",
-    });
   };
 
   return (

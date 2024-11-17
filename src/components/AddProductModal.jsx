@@ -18,8 +18,7 @@ export default function AddProductModal({ handleAddProduct }) {
     description: "",
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = () => {
     handleAddProduct(product);
     setProduct({
       image: "",
@@ -33,9 +32,9 @@ export default function AddProductModal({ handleAddProduct }) {
       <Dialog>
         <DialogTrigger
           asChild
-          className="flex items-center justify-center w-full py-20"
+          className="flex items-center justify-center my-10"
         >
-          <Button variant="outline">Add Product</Button>
+          <Button variant="outline" className='mx-auto'>Add Product</Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
@@ -74,7 +73,6 @@ export default function AddProductModal({ handleAddProduct }) {
             </div>
             <DialogClose asChild>
               <Button
-                type="submit"
                 size="sm"
                 className="px-3"
                 onClick={handleSubmit}
