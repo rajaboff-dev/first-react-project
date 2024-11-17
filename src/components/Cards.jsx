@@ -19,9 +19,12 @@ export default function Cards() {
 
   const handleEditProduct = (editedProductCallback) => {
     setProducts((prev) => {
-      let tempProduct = [...prev]
-      tempProduct[editedProductCallback.id - 1] = editedProductCallback
-      return tempProduct
+      let tempProducts = [...prev];
+      const index = tempProducts.findIndex((product) => product.id === editedProductCallback.id);
+      if (index !== -1) {
+        tempProducts[index] = editedProductCallback;
+      }
+      return tempProducts;
     });
   }
   const handleDeleteProduct = (id) => {
